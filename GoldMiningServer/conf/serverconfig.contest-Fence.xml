@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ascii"?>
+<conf tournamentname="GridSimulation" tournamentmode="0" launch-sync-type="key" time-to-launch="1800000" reportpath=".">
+	<network-agent port="12300" backlog="10"/>
+	<match>
+		<simulation
+			id="Fence"
+			simulationclass="massim.simulation.GridSimulation"
+			configurationclass="massim.simulation.GridSimulationConfigurationHandCrafted"
+			rmiobserver="massim.simulation.GridSimulationRMIObserver"
+			xmlobserver="massim.simulation.GridSimulationXMLObserver"
+			rmixmlobserver="massim.simulation.GridSimulationRMIXMLDocumentObserver"
+			xmlobserverpath="."
+			xmlstatisticsobserver="massim.simulation.GridSimulationXMLStatisticsObserver"
+			file-simulationlog="./log"
+			visualisationobserver="massim.simulation.GridSimulationVisualizationObserver"
+		>
+				
+				<configuration
+					      xmlns:meta="http://www.tu-clausthal.de/"
+					      sizex="51"
+					      sizey="51"
+					      numberOfObstacles = "235"
+					      numberOfGoldItems = "155"
+					      maxNumberOfSteps = "100"
+					      maxNumberOfGoldItems = "3"
+					      actionFailureProbability = "10"
+					      maxActionFailureProbability = "50"
+					      informationDistortionProbability = "5"
+					      goldGenerationProbability = "80"
+					      goldGenerationFrequency = "20"
+					      goldGenerationNumber = "3"
+					      numberOfAgents = "12"
+					      htaccess = "1"
+					      depotx="29"
+					      depoty="34"
+					      >
+					
+					<array item0="19" item1="4" item2="50" item3="41" item4="2" item5="3" item6="6" item7="47" item8="49" item9="11" item10="27" item11="20" meta:length="12" meta:name="agentPositionX"/>
+					<array item0="3" item1="50" item2="8" item3="35" item4="28" item5="14" item6="18" item7="50" item8="25" item9="26" item10="2" item11="44" meta:length="12" meta:name="agentPositionY"/>
+					
+					<array item0="4" item1="5" item2="6" item3="7" item4="10" item5="11" item6="12" item7="17" item8="18" item9="5" item10="6" item11="7" item12="10" item13="12" item14="18" item15="6" item16="11" item17="13" item18="16" item19="17" item20="7" item21="8" item22="9" item23="10" item24="14" item25="15" item26="16" item27="6" item28="7" item29="10" item30="14" item31="15" item32="5" item33="8" item34="14" item35="7" item36="8" item37="9" item38="13" item39="14" item40="15" item41="7" item42="10" item43="12" item44="5" item45="6" item46="8" item47="9" item48="12" item49="5" item50="7" item51="11"  item52="7" item53="8" item54="9" item55="5" item56="10" item57="8" item58="6" item59="7" item60="21" item61="20" item62="21" item63="19" item64="18"
+					item65="28" item66="29" item67="32" item68="33" item69="35" item70="39" item71="40" item72="41" item73="43" item74="29" item75="30" item76="37" item77="38" item78="45" item79="46" item80="33" item81="36" item82="37" item83="38" item84="44" item85="30" item86="32" item87="33" item88="38" item89="39" item90="43" item91="44"  item92="35" item93="37" item94="38" item95="41" item96="45" item97="33" item98="36" item99="41" item100="35" item101="38" item102="39" item103="40" item104="41" item105="44" item106="37" item107="41" item108="45" item109="38" item110="39" item111="43" item112="44" item113="45" item114="39" item115="41" item116="42" item117="39" item118="41" item119="43" item120="44" item121="46" item122="42" item123="44" item124="45" item125="45" item126="41" item127="36" item128="41" item129="42"
+					item130="0" item131="1" item132="1" item133="1" item134="2" item135="2" item136="0" item137="0" item138="1"  item139="2" item140="0" item141="1" item142="0" item143="6" item144="7" item145="10" item146="9" item147="14" item148="13" item149="12" item150="16" item151="17" item152="18" item153="18" item154="19"
+					meta:length="155" meta:name="GoldPositionX"/>
+					<array item0="4" item1="4" item2="4" item3="4" item4="4" item5="4" item6="4" item7="4" item8="4" item9="5" item10="5" item11="5" item12="5" item13="5" item14="5" item15="6" item16="6" item17="6" item18="6" item19="6" item20="7" item21="7" item22="7" item23="7" item24="7" item25="7" item26="7"  item27="9" item28="9" item29="9" item30="9" item31="9" item32="10" item33="10" item34="10" item35="11" item36="11" item37="11" item38="11" item39="11" item40="11" item41="12" item42="12" item43="12" item44="13" item45="13" item46="13" item47="13" item48="13" item49="15" item50="15" item51="15" item52="16" item53="16" item54="16" item55="17" item56="17" item57="18" item58="19" item59="19" item60="4" item61="5" item62="6" item63="7" item64="9"
+					item65="4" item66="4" item67="4" item68="4" item69="4" item70="4" item71="4" item72="4" item73="4" item74="5" item75="5" item76="5" item77="5" item78="5" item79="5" item80="6" item81="6" item82="6" item83="6" item84="6" item85="7" item86="7" item87="7" item88="7" item89="7" item90="7" item91="7"  item92="9" item93="9" item94="9" item95="9" item96="9" item97="10" item98="10" item99="10" item100="11" item101="11" item102="11" item103="11" item104="11" item105="11" item106="12" item107="12" item108="12" item109="13" item110="13" item111="13" item112="13" item113="13" item114="15" item115="15" item116="15" item117="16" item118="16" item119="16" item120="17" item121="17" item122="18" item123="19" item124="19" item125="4" item126="5" item127="6" item128="7" item129="9"
+					item130="31" item131="31" item132="34" item133="35" item134="35" item135="38" item136="39" item137="40" item138="41" item139="41" item140="45" item141="49" item142="50" item143="48" item144="50" item145="48" item146="49" item147="48" item148="48" item149="50" item150="49" item151="49" item152="49" item153="50" item154="48"
+					meta:length="155" meta:name="GoldPositionY"/>
+					
+					<array item0="25" item1="24" item2="23" item3="22" item4="21" item5="19" item6="18" item7="17"  item8="16" item9="15" item10="13" item11="12" item12="11" item13="10"  item14="9" item15="7" item16="6" item17="5" item18="4" item19="3" item20="26" item21="27" item22="28" item23="29" item24="31" item25="32" item26="33" item27="34" item28="35" item29="37" item30="38"  item31="39"  item32="40" item33="41" item34="43" item35="44" item36="45" item37="46" item38="47"
+					item39="4" item40="5" item41="6" item42="7" item43="9" item44="10" item45="11" item46="12"  item47="13" item48="15" item49="16" item50="17" item51="18" item52="19" item53="21" item54="22" item55="23" item56="24" item57="25" item58="46" item59="45" item60="44" item61="43" item62="41"  item63="40" item64="39" item65="38" item66="37" item67="35" item68="34" item69="33" item70="32" item71="31" item72="29" item73="28" item74="27" item75="26"
+					item76="3" item77="3" item78="3" item79="3" item80="3" item81="3" item82="3" item83="3" item84="3" item85="3" item86="3" item87="3" item88="3" item89="3" item90="3" 
+					item91="4" item92="5" item93="6" item94="7" item95="9" item96="10" item97="11" item98="12"  item99="13" item100="15" item101="16" item102="17" item103="18" item104="47" item105="47" item106="47" item107="47" item108="47" item109="47" item110="47" item111="47" item112="47"  item113="47" item114="47" item115="47" item116="47" item117="47" item118="46" item119="45" item120="44" item121="43" item122="41" item123="40" item124="39" item125="38" item126="37" item127="35" item128="34" item129="33" item130="32" item131="31" item132="3" item133="47" item134="3" item135="3" item136="3" item137="3" item138="3" item139="3" item140="3" item141="3" item142="3" item143="3" item144="3" item145="3" item146="3" item147="3" item148="3" item149="4" item150="5" item151="6" item152="7" item153="9" item154="10" item155="11" item156="12" item157="13" item158="15" item159="16" item160="17" item161="18" item162="47" item163="47" item164="47" item165="47" item166="47" item167="47" item168="47" item169="47" item170="47" item171="47" item172="47" item173="47" item174="47" item175="47" item176="46" item177="45" item178="44" item179="43" item180="41" item181="40" item182="39" item183="38" item184="37" item185="35" item186="34" item187="33" item188="32" item189="31" item190="47" item191="19" 
+					 
+					item192="26" item193="27" item194="28" item195="29" item196="30" item197="31" item198="32"
+					item199="32" item200="32" item201="32" item202="32" item203="32"
+					item204="26" item205="27" item206="28" item207="29" item208="30" item209="31"
+					item210="26" item211="26" item212="26" item213="26"
+					 
+					item214="9" item215="10" item216="13" item217="14" item218="15" item219="18" item220="19" item221="20" item222="23" item223="24" item224="25" item225="26" item226="27" item227="30" item228="31" item229="32" item230="35" item231="36" item232="37" item233="40" item234="41"
+					 
+					meta:length="235" meta:name="obstaclePositionX"/>	
+					 
+					<array item0="3" item1="4" item2="5" item3="6" item4="7" item5="9" item6="10" item7="11" item8="12" item9="13" item10="15" item11="16" item12="17" item13="18" item14="19" item15="21" item16="22" item17="23" item18="24" item19="25" item20="4" item21="5" item22="6" item23="7" item24="9" item25="10" item26="11" item27="12" item28="13" item29="15" item30="16" item31="17" item32="18" item33="19" item34="21" item35="22" item36="23" item37="24" item38="25"
+					item39="26" item40="27" item41="28" item42="29" item43="31" item44="32" item45="33" item46="34"  item47="35" item48="37" item49="38" item50="39" item51="40" item52="41" item53="43" item54="44" item55="45" item56="46" item57="47" item58="26" item59="27" item60="28" item61="29" item62="31"  item63="32" item64="33" item65="34" item66="35" item67="37" item68="38" item69="39" item70="40" item71="41" item72="43" item73="44" item74="45" item75="46" 
+					item76="3" item77="4" item78="5" item79="6" item80="7" item81="9" item82="10" item83="11"  item84="12" item85="13" item86="15" item87="16" item88="17" item89="18" item90="19"
+					item91="3" item92="3" item93="3" item94="3" item95="3" item96="3" item97="3" item98="3" item99="3" item100="3" item101="3" item102="3" item103="3" item104="3" item105="4" item106="5" item107="6" item108="7" item109="9" item110="10" item111="11" item112="12" item113="13" item114="15" item115="16" item116="17" item117="18" item118="3" item119="3" item120="3" item121="3" item122="3" item123="3" item124="3" item125="3" item126="3" item127="3" item128="3" item129="3" item130="3" item131="3" item132="19" item133="19" item134="31" item135="32" item136="33" item137="34" item138="35" item139="37" item140="38" item141="39" item142="40" item143="41" item144="43" item145="44" item146="45" item147="46" item148="47" item149="47" item150="47" item151="47" item152="47" item153="47" item154="47" item155="47" item156="47" item157="47" item158="47" item159="47" item160="47" item161="47" item162="31" item163="32" item164="33" item165="34" item166="35" item167="37" item168="38" item169="39" item170="40" item171="41" item172="43" item173="44" item174="45" item175="46" item176="47" item177="47" item178="47" item179="47" item180="47" item181="47" item182="47" item183="47" item184="47" item185="47" item186="47" item187="47" item188="47" item189="47" item190="47" item191="47" 
+					 
+					item192="31" item193="31" item194="31" item195="31" item196="31" item197="31" item198="31"
+					item199="36" item200="34" item201="35" item202="37" item203="38"
+					item204="37" item205="37" item206="37" item207="37" item208="37" item209="37"
+					item210="30" item211="34" item212="33" item213="32"
+					 
+					item214="28" item215="28" item216="27" item217="27" item218="27" item219="26" item220="26" item221="26" item222="25" item223="25" item224="25" item225="25" item226="25" item227="24" item228="24" item229="24" item230="23" item231="23" item232="23" item233="22" item234="22"
+					 
+					meta:length="235" meta:name="obstaclePositionY"/>
+					
+				</configuration>
+				
+				<agents>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="blue"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+					<agent agentclass="massim.simulation.GridSimulationAgent" agentcreationclass="massim.simulation.GridSimulationAgentParameter" team="red"><configuration/></agent>
+				</agents>
+		</simulation>
+
+
+	</match>
+	
+        <accounts>
+                <actionclassmap name="Grid">
+                        <actionclass id="action" class="massim.simulation.GridSimulationAgentAction"/>
+                        <actionclass id="invalid" class="massim.InvalidAction"/>
+                </actionclassmap>
+
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot1" password="1" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot2" password="2" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot3" password="3" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot4" password="4" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot5" password="5" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="AC07bot6" password="6" team="AC07bot" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant1" password="1" team="participant" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant2" password="2" team="participant" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant3" password="3" team="participant" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant4" password="4" team="participant" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant5" password="5" team="participant" />
+                <account actionclassmap="Grid"
+                        defaultactionclass="massim.simulation.GridSimulationAgentAction"
+                        timeout="4000" auxtimeout="500" maxpacketlength="65536"
+                        username="participant6" password="6" team="participant" />
+        </accounts>
+</conf>
+

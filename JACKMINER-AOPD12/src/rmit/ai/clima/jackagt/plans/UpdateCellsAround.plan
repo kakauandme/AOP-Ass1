@@ -1,0 +1,85 @@
+package rmit.ai.clima.jackagt.plans;
+import rmit.ai.clima.jackagt.events.*;
+import rmit.ai.clima.jackagt.data.*;
+
+import rmit.ai.clima.comms.Cell;
+import rmit.ai.clima.gui.grid.*;
+
+public plan UpdateCellsAround extends Plan
+{
+/******** Start PDT Design Block *** DO NOT EDIT IT *********/
+
+/*
+Plan Name: UpdateCellsAround
+Description: Update the beliefs about the cells around a location
+*/
+	//Events handled by the plan are declared here.
+	#handles event EUpdateBel eupdatebel_h;
+
+
+	// Declarations of any beliefset/data that the plan accesses.
+	#modifies data CellEmpty bel_cellEmpty_dat;
+
+/******** End PDT Design Block *** DO NOT EDIT IT *********/
+
+
+   static boolean relevant(EUpdateBel ev)
+    {
+        return true;
+    }
+    
+    context()
+    {
+        true;
+    }
+
+    
+    #reasoning method
+    body()
+    {
+        // Extract the data from the event eupdatebel_h
+        int step = eupdatebel_h.step;
+        int posX = eupdatebel_h.currentPos.x;
+        int posY = eupdatebel_h.currentPos.y;
+        Cell[] cells = eupdatebel_h.cells;	// the array of adjacent cells
+           
+
+        /* Assimilate all the information stored in cells[] wrt 
+         * central location (posX,posY)
+         */
+        String locDir;
+        boolean setToNoGold;	//	should a cell be set to have no gold?
+        for(int i=0; i < cells.length; i++) {	// interate on each cell
+    
+            // Calculate the exact point of cells[i]: store it in GridPoint loc
+            locDir = cells[i].id;	// first, get its direction (e.g., n, nw, s, se, etc.)
+            GridPoint loc = GridPoint.getFromDir(posX, posY, locDir);
+            
+           setToNoGold = true;	// Initially, assume the cell does not contain goal	            
+           // Iterate on all the marks/labels for cells[i] (which is location loc)
+           for(int j = 0; j < cells[i].marks.length; j++) {
+    
+               // if mark is "unknown" then do not process the cell at all
+               if( !(cells[i].marks[j].type.equalsIgnoreCase("unknown")) ) {
+    
+                    // First, update beliefset bel_cellEmpty
+                    if( cells[i].marks[j].type.equalsIgnoreCase("obstacle") ) {
+                        bel_cellEmpty_dat.add(loc.x, loc.y, Cursor.FALSE);
+                    }
+                    else {	// The cell must be empty if there is no obstacle
+                        bel_cellEmpty_dat.add(loc.x, loc.y, Cursor.TRUE);
+                    }
+
+                } else {
+               		 // sensor returned "unknown" for this cell (noise in sensor)
+               	} // end if
+            } // end for j 
+
+            
+         } // end for i 
+          
+	} // end of @body
+
+
+
+}

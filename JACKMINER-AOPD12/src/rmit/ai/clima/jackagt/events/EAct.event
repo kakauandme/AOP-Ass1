@@ -1,0 +1,25 @@
+package rmit.ai.clima.jackagt.events;
+
+import rmit.ai.clima.jackagt.data.*;
+
+/******** Start PDT Design Block *** DO NOT EDIT IT *********/
+public event EAct extends BDIGoalEvent
+{
+/*
+ * Message Name: EAct
+ * Covered: true
+ * Overlap: true
+*/
+	#uses data CurrentRequestActionId bel_currentRequestActionId_dat;
+
+/******** End PDT Design Block *** DO NOT EDIT IT *********/
+	/*Define the condition to trigger Automatic Event*/	
+	
+	logical int $x, $y;
+	// Posted automatically when the agent is aware of a new step
+	#posted when (bel_currentRequestActionId_dat.get($x, $y)) {	}
+   
+	
+   #posted as act() {}
+
+}

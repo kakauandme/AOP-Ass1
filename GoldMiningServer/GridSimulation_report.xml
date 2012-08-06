@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tournament tournament-name="GridSimulation">
+<team name="participant"/>
+<team name="AC07bot"/>
+<match blue="AC07bot" red="participant">
+<simulation endtime="1343967785213" name="GridSimulation_participantAC07bot_Park" starttime="1343967315565">
+<result AC07bot="0" participant="0" svgFolder=""/>
+</simulation>
+</match>
+</tournament>
