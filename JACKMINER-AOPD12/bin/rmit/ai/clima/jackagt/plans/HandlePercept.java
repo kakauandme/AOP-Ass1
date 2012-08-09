@@ -60,10 +60,10 @@ public class HandlePercept extends aos.jack.jak.plan.Plan {
             "80",
             "100",
             "110",
-            "114",
             "115",
-            "119",
-            "122",
+            "116",
+            "120",
+            "123",
             "67"};
     private final static java.lang.String[] __planVariableNames = {
             "ID",
@@ -572,30 +572,31 @@ public class HandlePercept extends aos.jack.jak.plan.Plan {
                             agent.send("gui",meinformagentstatus_s.post(__local__15_6,__local__15_3,__local__15_1));
                             break;
                         }
-                        //* (114)         consoleIface.showConsoleDebug("A request-action event for step-id " + step + "-" + id + " states that " + getAgent().name() + " is currently at location " + currentPos.toString() + " with " + items + " pieces of gold");
+                        //* (115)         consoleIface.showConsoleDebug("A request-action event states that " + getAgent().name() + " is currently at loc. " + currentPos.toString());
                         case 20: 
                         {
                             __state = 21;
                             // Report current location, step number, and no of gold pieces carrying
+//consoleIface.showConsoleDebug("A request-action event for step-id " + step + "-" + id + " states that " + getAgent().name() + " is currently at location " + currentPos.toString() + " with " + items + " pieces of gold");
 
-                            consoleIface.showConsoleDebug("A request-action event for step-id " + __local__15_2 + "-" + __local__15_1 + " states that " + getAgent().name() + " is currently at location " + __local__15_6.toString() + " with " + __local__15_3 + " pieces of gold");
+                            consoleIface.showConsoleDebug("A request-action event states that " + getAgent().name() + " is currently at loc. " + __local__15_6.toString());
                             break;
                         }
-                        //* (115) 		@send("gui", eguidebugmessage_s.reportMessage(ID, "Step: "+ id + " - Location: " + GridPoint.toString(currentPos) + " - Gold: " + items) );
+                        //* (116) 		@send("gui", eguidebugmessage_s.reportMessage(ID, "Step: "+ id + " - Location: " + GridPoint.toString(currentPos) + " - Gold: " + items) );
                         case 21: 
                         {
                             __state = 22;
                             agent.send("gui",eguidebugmessage_s.reportMessage(ID,"Step: " + __local__15_1 + " - Location: " + rmit.ai.clima.gui.grid.GridPoint.toString(__local__15_6) + " - Gold: " + __local__15_3));
                             break;
                         }
-                        //* (119)         @post( eshowbeliefs_p.show() );
+                        //* (120)         @post( eshowbeliefs_p.show() );
                         case 22: 
                         {
                             __state = 23;
                             agent.postEvent(eshowbeliefs_p.show());
                             break;
                         }
-                        //* (122) 		bel_currentRequestActionId_dat.add(id,step);
+                        //* (123) 		bel_currentRequestActionId_dat.add(id,step);
                         case 23: 
                         {
                             __state = 24;

@@ -111,7 +111,8 @@ Description: This plan assimilates each percept in formation received from the g
 
 		
 		// Report current location, step number, and no of gold pieces carrying
-        consoleIface.showConsoleDebug("A request-action event for step-id " + step + "-" + id + " states that " + getAgent().name() + " is currently at location " + currentPos.toString() + " with " + items + " pieces of gold");
+        //consoleIface.showConsoleDebug("A request-action event for step-id " + step + "-" + id + " states that " + getAgent().name() + " is currently at location " + currentPos.toString() + " with " + items + " pieces of gold");
+        consoleIface.showConsoleDebug("A request-action event states that " + getAgent().name() + " is currently at loc. " + currentPos.toString());
 		@send("gui", eguidebugmessage_s.reportMessage(ID, "Step: "+ id + " - Location: " + GridPoint.toString(currentPos) + " - Gold: " + items) );
 
 

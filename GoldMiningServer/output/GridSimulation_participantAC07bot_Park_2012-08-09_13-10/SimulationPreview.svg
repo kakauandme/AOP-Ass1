@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="text/ecmascript" zoomAndPan="magnify" contentStyleType="text/css" preserveAspectRatio="xMidYMid meet" onload="start()" version="1.0"><title>Show Simulation</title><script type="text/ecmascript"><![CDATA[var dia=new Array ("masSim-0.svg", "masSim-1.svg", "masSim-2.svg", "masSim-3.svg", "masSim-4.svg", "masSim-5.svg", "masSim-6.svg", "masSim-7.svg", "masSim-8.svg", "masSim-9.svg", "masSim-10.svg", "masSim-11.svg", "masSim-12.svg", "masSim-13.svg", "masSim-14.svg", "masSim-15.svg", "masSim-16.svg", "masSim-17.svg", "masSim-18.svg", "masSim-19.svg", "masSim-20.svg", "masSim-21.svg", "masSim-22.svg", "masSim-23.svg", "masSim-24.svg", "masSim-25.svg", "masSim-26.svg", "masSim-27.svg", "masSim-28.svg", "masSim-29.svg", "masSim-30.svg", "masSim-31.svg", "masSim-32.svg", "masSim-33.svg", "masSim-34.svg", "masSim-35.svg", "masSim-36.svg", "masSim-37.svg", "masSim-38.svg", "masSim-39.svg", "masSim-40.svg", "masSim-41.svg", "masSim-42.svg", "masSim-43.svg", "masSim-44.svg", "masSim-45.svg", "masSim-46.svg", "masSim-47.svg", "masSim-48.svg", "masSim-49.svg", "masSim-50.svg", "masSim-51.svg", "masSim-52.svg", "masSim-53.svg", "masSim-54.svg", "masSim-55.svg", "masSim-56.svg", "masSim-57.svg", "masSim-58.svg", "masSim-59.svg", "masSim-60.svg", "masSim-61.svg", "masSim-62.svg", "masSim-63.svg", "masSim-64.svg", "masSim-65.svg", "masSim-66.svg", "masSim-67.svg", "masSim-68.svg", "masSim-69.svg", "masSim-70.svg", "masSim-71.svg", "masSim-72.svg", "masSim-73.svg", "masSim-74.svg", "masSim-75.svg", "masSim-76.svg", "masSim-77.svg", "masSim-78.svg", "masSim-79.svg", "masSim-80.svg", "masSim-81.svg", "masSim-82.svg", "masSim-83.svg", "masSim-84.svg", "masSim-85.svg", "masSim-86.svg", "masSim-87.svg", "masSim-88.svg", "masSim-89.svg", "masSim-90.svg", "masSim-91.svg", "masSim-92.svg", "masSim-93.svg", "masSim-94.svg", "masSim-95.svg", "masSim-96.svg", "masSim-97.svg", "masSim-98.svg", "masSim-99.svg", "masSim-100.svg");
+var numberSvgs=100;
+var stat="stop";
+var a=0;
+var time=0;
+var delay = 1000;
+var zoomX = 1;
+var zoomY = 1;
+
+function start() {
+  var textobject = document.createElement("text");
+  textobject.setAttribute("id","text");
+  document.getFirstChild().appendChild(textobject);
+  createText();
+
+  var speedTextObject = document.createElement("text");
+  speedTextObject.setAttribute( "id", "text2");
+  document.getFirstChild().appendChild(speedTextObject);
+  pressSpeedButton(1,1);
+}
+ 
+function createText() {
+  var t = document.getElementById('text');
+  document.getFirstChild().removeChild(t);
+  var step = a;
+  var textnode = document.createTextNode(step +" / "+ numberSvgs);
+  var textobject = document.createElement("text");
+  textobject.setAttribute("id","text");
+  textobject.setAttribute("x","10");
+  textobject.setAttribute("y","588");
+  textobject.setAttribute("style","font-family:Arial Unicode;font-weight:bold;font-size:30;");
+  textobject.setAttribute("transform","scale("+zoomX+" "+zoomY+")");
+  textobject.appendChild(textnode);
+  document.getFirstChild().appendChild(textobject);
+}
+ 
+function nextSvg() {
+  if (a==(numberSvgs)){
+    a=0;
+  }
+  else {
+    a++;
+  }
+  createText();
+  var img = document.getElementById('image');
+  img.setAttribute('xlink:href',dia[a]);
+}
+ 
+function backSvg() {
+  if (a==0 || a < 0) {
+    a=numberSvgs;
+  }
+  else {
+    a--;
+  }
+  createText();
+  var img = document.getElementById('image');
+  img.setAttribute('xlink:href',dia[a]);
+}
+ 
+function firstSvg() {
+  var img = document.getElementById('image');
+  a = 0;
+  createText();
+  stat = "stop";  img.setAttribute('xlink:href',dia[a]);
+}
+ 
+function lastSvg() {
+  var img = document.getElementById('image');
+  a = numberSvgs;
+  createText();
+  img.setAttribute('xlink:href',dia[a]);
+}
+ 
+function _run() { 
+  if(stat == "start") { 
+    if(a < numberSvgs) { 
+      a = -1;
+    } 
+  } 
+  if(stat == "stop") { 
+    if(a < numberSvgs) { 
+      stat = "start"; 
+      load(); 
+    } 
+    if(a == numberSvgs) {
+      stat = "start";
+      a = -1;
+      load();
+    } 
+  } 
+  if(stat == "halt") { 
+    stat = "start"; 
+    load();
+  } 
+} 
+ 
+function load() {
+  if(stat == "start" && a < (numberSvgs)) {
+    a++;
+    var img = document.getElementById('image');
+    createText();
+    img.setAttribute('xlink:href',dia[a]);
+    setTimeout("load()",delay);
+  } else if ( a == numberSvgs) {
+    stat = "stop";
+  }
+}
+ 
+function _halt() {
+  stat = "halt";
+  load();
+}
+ 
+function speedPlus() {
+  if(delay > 32) { 
+    delay = delay / 2; 
+  } 
+  pressSpeedButton(zoomX,zoomY);}
+ 
+function speedMinus() {
+  if(delay < 7999) { 
+    delay = delay * 2;
+  } 
+  pressSpeedButton(zoomX,zoomY);}
+ 
+function pressSpeedButton(zoomX,zoomY) {
+  var t = document.getElementById('text2');
+  document.getFirstChild().removeChild(t);
+  var speedTextNode = document.createTextNode((1000 / delay)+"  frames per second");
+  var speedTextObject = document.createElement("text");
+  speedTextObject.setAttribute( "id", "text2");
+  speedTextObject.setAttribute("x", "773");
+  speedTextObject.setAttribute( "y", "588");
+  speedTextObject.setAttribute("style","font-family:Arial Unicode;font-weight:bold;font-size:16;");
+  speedTextObject.setAttribute("transform","scale("+zoomX+" "+zoomY+")");
+  speedTextObject.appendChild(speedTextNode);
+  document.getFirstChild().appendChild(speedTextObject);
+}
+ 
+function zoom(x,y) {
+  var img = document.getElementById('zooming');
+  img.setAttribute('transform','scale('+x+' '+y+')');
+  zoomX = x;
+  zoomY = y;
+  createText();
+  pressSpeedButton(zoomX,zoomY);}
+ 
+function stoperror() { 
+  return true
+}
+ 
+window.onerror=stoperror 
+]]></script><defs><style type="text/css"><![CDATA[rect {
+  fill: rgb(140,140,140); 
+}
+.press{
+  cursor: crosshair;
+}
+.noPress{
+  cursor: default;
+}
+.control{
+  stroke:black;stroke-width:3;
+}.menu{
+  stroke:black;stroke-width:1.5;
+}
+.special {
+  fill: black;
+  font-size: 12;
+}
+.menuText {
+  fill: gold;
+  font-size: 9;
+}
+text {
+  font-family:Arial Unicode;
+}
+]]></style></defs><g id="zooming" transform="scale(1 1)"><text x="506" y="17" style="font-family:Arial Unicode;font-size:20;" text-anchor="middle">GridSimulation</text><text x="506" y="37" style="font-family:Arial Unicode;font-size:20;" text-anchor="middle">GridSimulation_participantAC07bot_Park</text><g class="press" id="controlGroup"><rect x="397" y="570" onclick="firstSvg()" width="34" class="control" rx="5" ry="5" id="rectFirstButton" height="20"/><path id="pathFirstButton" d="M402 588 L402 572 M416 588 L406 580 L416 572 M426 588 L416 580 L426 572" style="stroke:black;stroke-width:3;fill:none;" onclick="firstSvg()"/><rect x="437" y="570" onclick="backSvg()" width="30" class="control" rx="5" ry="5" id="rectBackButton" height="20"/><path id="pathBackButton" d="M452 588 L442 580 L452 572 M462 588 L452 580 L462 572" style="stroke:black;stroke-width:3;fill:none;" onclick="backSvg()"/><rect x="473" y="570" onclick="_halt()" width="30" class="control" rx="5" ry="5" id="rectHaltButton" height="20"/><line onclick="_halt()" x1="493" x2="493" y1="572" style="stroke:black;stroke-width:5;fill:none;" y2="588" id="line1HaltButton"/><line onclick="_halt()" x1="483" x2="483" y1="572" style="stroke:black;stroke-width:5;fill:none;" y2="588" id="line2HaltButton"/><rect x="509" y="570" onclick="_run()" width="30" class="control" rx="5" ry="5" id="rectPlayButton" height="20"/><polygon id="pathPlayButton" style="stroke:black;stroke-width:3;fill:black;" points="516,573 516,587 532,580" onclick="_run()"/><rect x="545" y="570" onclick="nextSvg()" width="30" class="control" rx="5" ry="5" id="rectNextButton" height="20"/><path id="pathNextButton" d="M560 588 L570 580 L560 572 M550 588 L560 580 L550 572" style="stroke:black;stroke-width:3;fill:none;" onclick="nextSvg()"/><rect x="581" y="570" onclick="lastSvg()" width="34" class="control" rx="5" ry="5" id="rectLastButton" height="20"/><path id="pathLastButton" d="M610 588 L610 572 M596 588 L606 580 L596 572 M586 588 L596 580 L586 572" style="stroke:black;stroke-width:3;fill:none;" onclick="lastSvg()"/><rect x="621" y="570" width="94" class="control" rx="5" ry="5" id="SpeedButton" height="20"/><text x="668" y="587" style="font-family:Arial Unicode;font-size:18;" class="noPress" text-anchor="middle">PlaySpeed</text><rect x="721" y="570" onclick="speedPlus()" width="20" class="control" rx="5" ry="5" id="SpeedPlusButton" height="20"/><line onclick="speedPlus()" x1="723" x2="739" y1="580" y2="580" class="control" id="line1SpeedPlusButton"/><line onclick="speedPlus()" x1="731" x2="731" y1="573" y2="587" class="control" id="line2SpeedPlusButton"/><rect x="747" y="570" onclick="speedMinus()" width="20" class="control" rx="5" ry="5" id="SpeedMinusButton" height="20"/><line onclick="speedMinus()" x1="749" x2="765" y1="580" y2="580" class="control" id="line2SpeedMinusButton"/></g><image x="0" y="40" width="1020" id="image" height="525" xlink:href="masSim-0.svg"/><g class="press" id="resolutionMenu"><g onclick="zoom(0.78125,0.78125)" id="800x600"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="30" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="30" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">800x600<animate dur="0.5s" from="21" to="41" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="41" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(1,1)" id="1024x768"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="50" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="50" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">1024x768<animate dur="0.5s" from="21" to="61" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="61" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(1.25,1.33)" id="1280x1024"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="70" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="70" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">1280x1024<animate dur="0.5s" from="21" to="81" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="81" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(1.3671875,1.3671875)" id="1400x1050"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="90" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="90" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">1400x1050<animate dur="0.5s" from="21" to="101" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="101" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(1.5625,1.5625)" id="1600x1200"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="110" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="110" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">1600x1200<animate dur="0.5s" from="21" to="121" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="121" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(1.875,1.875)" id="1920x1440"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="130" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="130" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">1920x1440<animate dur="0.5s" from="21" to="141" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="141" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g onclick="zoom(2,2)" id="2048x1536"><rect x="15" y="10" width="50" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="150" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="150" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="menuText" text-anchor="middle">2048x1536<animate dur="0.5s" from="21" to="161" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="161" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g><g id="close"><rect x="10" y="10" width="60" class="control" rx="5" height="15" ry="5"><animate dur="0.5s" from="10" to="170" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="170" to="10" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></rect><text x="40" y="21" class="special" text-anchor="middle">close<animate dur="0.5s" from="21" to="181" fill="freeze" begin="menu.click" attributeName="y" attributeType="XML"/><animate dur="0.5s" from="181" to="21" fill="freeze" begin="close.click" attributeName="y" attributeType="XML"/></text></g></g><g class="press" id="menu"><rect x="10" y="10" width="60" class="control" rx="5" height="15" ry="5"/><text x="40" y="21" class="special" text-anchor="middle">resolution</text></g></g></svg>
