@@ -1,0 +1,25 @@
+package rmit.ai.clima.jackagt.data;
+import rmit.ai.clima.jackagt.events.*;
+
+public beliefset CurrentPosition extends ClosedWorld /*or OpenWorld*/
+{
+/******** Start PDT Design Block *** DO NOT EDIT IT *********/
+/*
+ * Beliefset Name: CurrentPosition
+ */
+
+	// Zero or more #key field declarations.
+	// These describe the key attributes of each belief.
+	/*	Horisontal Position of Agent
+	*/
+	#key field int x;
+
+
+
+	// Zero of more #value field declarations.
+	// These describe the data attributes of each belief.
+	#value field null ;
+
+/******** End PDT Design Block *** DO NOT EDIT IT *********/
+	//#indexed query q(logical int dummy); //Dummy stuff for successful compiling as well
+}

@@ -34,11 +34,11 @@ Agent Name: Coordinator
 
 
 	//Plans directly used are declared here.
+	#uses plan Coord_EndSimulation ;
+
 	#uses plan Coord_EndGame ;
 
 	#uses plan Coord_InitSimulation ;
-
-	#uses plan Coord_EndSimulation ;
 
 
 	// Inner capabilities are declared here.
