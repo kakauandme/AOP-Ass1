@@ -13,8 +13,8 @@ import aos.jack.jak.event.Event;
 import aos.jack.jak.task.Task;
 import aos.jack.jak.core.Generator;
 import aos.jack.jak.logic.Signature;
-import rmit.ai.clima.jackagt.events.EExecuteCLIMAaction;
 import rmit.ai.clima.jackagt.events.EGUIDebugMessage;
+import rmit.ai.clima.jackagt.events.EExecuteCLIMAaction;
 import rmit.ai.clima.jackagt.events.EAct;
 import rmit.ai.clima.jackagt.data.CellEmpty;
 import rmit.ai.clima.interfaces.DebugInterface;
@@ -34,8 +34,8 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
     aos.jack.jak.logic.IntegerVariable $posX;
     aos.jack.jak.logic.IntegerVariable $posY;
     aos.jack.jak.logic.IntegerVariable $noGold;
-    public rmit.ai.clima.jackagt.events.EExecuteCLIMAaction eexecuteclimaaction_p;
     public rmit.ai.clima.jackagt.events.EGUIDebugMessage eguidebugmessage_s;
+    public rmit.ai.clima.jackagt.events.EExecuteCLIMAaction eexecuteclimaaction_p;
     public rmit.ai.clima.jackagt.events.EAct eact_h;
     public rmit.ai.clima.jackagt.data.CellEmpty bel_cellEmpty_dat;
     public rmit.ai.clima.interfaces.DebugInterface consoleIface;
@@ -53,8 +53,8 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
             "$posX",
             "$posY",
             "$noGold",
-            "eexecuteclimaaction_p",
             "eguidebugmessage_s",
+            "eexecuteclimaaction_p",
             "eact_h",
             "bel_cellEmpty_dat",
             "consoleIface"};
@@ -64,8 +64,8 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
             "logical int",
             "logical int",
             "logical int",
-            "rmit.ai.clima.jackagt.events.EExecuteCLIMAaction",
             "EGUIDebugMessage",
+            "rmit.ai.clima.jackagt.events.EExecuteCLIMAaction",
             "EAct",
             "CellEmpty",
             "rmit.ai.clima.interfaces.DebugInterface"};
@@ -100,8 +100,8 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
         __ns = __env.__ns;
         __planTask = __t;
         __logic = __t.logic;
-        eexecuteclimaaction_p = __env.eexecuteclimaaction_p;
         eguidebugmessage_s = __env.eguidebugmessage_s;
+        eexecuteclimaaction_p = __env.eexecuteclimaaction_p;
         eact_h = __env.eact_h;
         bel_cellEmpty_dat = __env.bel_cellEmpty_dat;
         consoleIface = (rmit.ai.clima.interfaces.DebugInterface) __ns.getIF(rmit.ai.clima.interfaces.DebugInterface.class);
@@ -112,14 +112,14 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
     
     public boolean init_sentinel(aos.jack.jak.agent.NameSpace __a)
     {
-        eexecuteclimaaction_p = (rmit.ai.clima.jackagt.events.EExecuteCLIMAaction) __a.findEvent("rmit.ai.clima.jackagt.events.EExecuteCLIMAaction");
-        if (eexecuteclimaaction_p == null) {
-            warning("Failed to find EExecuteCLIMAaction eexecuteclimaaction_p");
-            return false;
-        }
         eguidebugmessage_s = (rmit.ai.clima.jackagt.events.EGUIDebugMessage) __a.findEvent("rmit.ai.clima.jackagt.events.EGUIDebugMessage");
         if (eguidebugmessage_s == null) {
             warning("Failed to find EGUIDebugMessage eguidebugmessage_s");
+            return false;
+        }
+        eexecuteclimaaction_p = (rmit.ai.clima.jackagt.events.EExecuteCLIMAaction) __a.findEvent("rmit.ai.clima.jackagt.events.EExecuteCLIMAaction");
+        if (eexecuteclimaaction_p == null) {
+            warning("Failed to find EExecuteCLIMAaction eexecuteclimaaction_p");
             return false;
         }
         eact_h = (rmit.ai.clima.jackagt.events.EAct) __a.findEvent("rmit.ai.clima.jackagt.events.EAct");
@@ -266,11 +266,11 @@ public class MoveRandomly extends aos.jack.jak.plan.Plan {
             }
             case 5: 
             {
-                return aos.util.ToObject.box(eexecuteclimaaction_p);
+                return aos.util.ToObject.box(eguidebugmessage_s);
             }
             case 6: 
             {
-                return aos.util.ToObject.box(eguidebugmessage_s);
+                return aos.util.ToObject.box(eexecuteclimaaction_p);
             }
             case 7: 
             {

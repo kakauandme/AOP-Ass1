@@ -20,7 +20,7 @@
 				sizey="51"
 				numberOfObstacles = "50"
 				numberOfGoldItems = "150"
-				maxNumberOfSteps = "100"
+				maxNumberOfSteps = "20"
 			        maxNumberOfGoldItems = "3"
 				actionFailureProbability = "10"
 				maxActionFailureProbability = "25"

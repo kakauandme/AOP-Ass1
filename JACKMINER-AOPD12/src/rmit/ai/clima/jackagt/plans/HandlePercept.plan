@@ -20,21 +20,23 @@ Plan Name: HandlePercept
 Description: This plan assimilates each percept in formation received from the game server
 */
 	//Events handled by the plan are declared here.
-	#sends event EUpdateBel eupdatebel_s;
+	#sends event EGUIDebugMessage eguidebugmessage_s;
 
 	#sends event MEInformAgentStatus meinformagentstatus_s;
 
 	#posts event EAct eact_p;
 
-	#posts event EShowBeliefs eshowbeliefs_p;
+	#sends event EUpdateBel eupdatebel_s;
 
-	#sends event EGUIDebugMessage eguidebugmessage_s;
+	#posts event EShowBeliefs eshowbeliefs_p;
 
 	#handles event PerceiveClimaServer perceiveclimaserver_h;
 
 
 	// Declarations of any beliefset/data that the plan accesses.
 	#modifies data CurrentRequestActionId bel_currentRequestActionId_dat;
+
+	#modifies data CurrentPosition belcurrentPosition_dat;
 
 /******** End PDT Design Block *** DO NOT EDIT IT *********/
 
@@ -94,7 +96,7 @@ Description: This plan assimilates each percept in formation received from the g
 
 
 
-        
+        belcurrentPosition_dat.add(posX,posY);
        
         // Update the information on all the cells around (as a subtask)
         @subtask( eupdatebel_s.post(id, currentPos, cells, items) );
@@ -112,7 +114,7 @@ Description: This plan assimilates each percept in formation received from the g
 		
 		// Report current location, step number, and no of gold pieces carrying
         //consoleIface.showConsoleDebug("A request-action event for step-id " + step + "-" + id + " states that " + getAgent().name() + " is currently at location " + currentPos.toString() + " with " + items + " pieces of gold");
-        consoleIface.showConsoleDebug("A request-action event states that " + getAgent().name() + " is currently at loc. " + currentPos.toString());
+        consoleIface.showConsoleDebug("Agent " + getAgent().name() + " believes it is currently at location" + currentPos.toString());
 		@send("gui", eguidebugmessage_s.reportMessage(ID, "Step: "+ id + " - Location: " + GridPoint.toString(currentPos) + " - Gold: " + items) );
 
 

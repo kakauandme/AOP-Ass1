@@ -23,9 +23,9 @@ Description: Decide what to do next
 
 
 	//Events handled, posted and sent are declared here.
-	#handles external event EAct ;
-
 	#posts external event EExecuteCLIMAaction eexecuteclimaaction_p;
+
+	#handles external event EAct ;
 
 	#sends event EGUIDebugMessage eguidebugmessage_s;
 

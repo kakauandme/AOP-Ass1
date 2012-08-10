@@ -27,9 +27,9 @@ Description: Finalize a simulation
 	// Declarations of any beliefset/data that the plan accesses.
 	#modifies data CellEmpty bel_cellEmpty_dat;
 
-	#modifies data CurrentRequestActionId bel_currentRequestActionId_dat;
-
 	#modifies data SimulationProp bel_simulationProp_dat;
+
+	#modifies data CurrentRequestActionId bel_currentRequestActionId_dat;
 
 /******** End PDT Design Block *** DO NOT EDIT IT *********/
 

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- backup@2012/08/09/14:57:32 -->
+<!-- backup@2012/08/10/23:19:19 -->
 <Project PDTVersion="0.3.2">
 <JACKCodePool IMemento.internal.id="290058" PoolType="148">
-<CodeEntity IMemento.internal.id="283796" cellID="80386" modifier="5"/>
-<CodeEntity IMemento.internal.id="281748" cellID="77826" modifier="5"/>
-<CodeEntity IMemento.internal.id="283540" cellID="82946" modifier="5"/>
-<CodeEntity IMemento.internal.id="281492" cellID="34818" modifier="1"/>
-<CodeEntity IMemento.internal.id="283284" cellID="82178" modifier="5"/>
-<CodeEntity IMemento.internal.id="281236" cellID="46082" modifier="1"/>
-<CodeEntity IMemento.internal.id="283028" cellID="80130" modifier="5"/>
-<CodeEntity IMemento.internal.id="280980" cellID="40194" modifier="1"/>
-<CodeEntity IMemento.internal.id="282772" cellID="75266" modifier="5"/>
-<CodeEntity IMemento.internal.id="280724" cellID="68866" modifier="5"/>
 <CodeEntity IMemento.internal.id="282516" cellID="70146" modifier="5"/>
-<CodeEntity IMemento.internal.id="280468" cellID="69890" modifier="5"/>
-<CodeEntity IMemento.internal.id="282260" cellID="78082" modifier="5"/>
 <CodeEntity IMemento.internal.id="280212" cellID="66818" modifier="5"/>
+<CodeEntity IMemento.internal.id="283028" cellID="80130" modifier="5"/>
+<CodeEntity IMemento.internal.id="280724" cellID="68866" modifier="5"/>
+<CodeEntity IMemento.internal.id="283540" cellID="82946" modifier="5"/>
+<CodeEntity IMemento.internal.id="281236" cellID="46082" modifier="1"/>
 <CodeEntity IMemento.internal.id="284052" cellID="33026" modifier="1"/>
-<CodeEntity IMemento.internal.id="282004" cellID="75010" modifier="5"/>
+<CodeEntity IMemento.internal.id="281748" cellID="77826" modifier="5"/>
+<CodeEntity IMemento.internal.id="282260" cellID="78082" modifier="5"/>
+<CodeEntity IMemento.internal.id="291988" cellID="290818" modifier="5"/>
 <CodeEntity IMemento.internal.id="279956" cellID="68354" modifier="5"/>
+<CodeEntity IMemento.internal.id="282772" cellID="75266" modifier="5"/>
+<CodeEntity IMemento.internal.id="280468" cellID="69890" modifier="5"/>
+<CodeEntity IMemento.internal.id="283284" cellID="82178" modifier="5"/>
+<CodeEntity IMemento.internal.id="280980" cellID="40194" modifier="1"/>
+<CodeEntity IMemento.internal.id="283796" cellID="80386" modifier="5"/>
+<CodeEntity IMemento.internal.id="281492" cellID="34818" modifier="1"/>
+<CodeEntity IMemento.internal.id="282004" cellID="75010" modifier="5"/>
 </JACKCodePool>
 <RelationPool IMemento.internal.id="88074" PoolType="5">
 <Relation DST="45569" IMemento.internal.id="95749" Prominence="0" RelationType="1073741837" SRC="20993"/>
@@ -132,6 +133,7 @@
 <Relation DST="40449" IMemento.internal.id="147973" Prominence="0" RelationType="-2147483648" SRC="36097"/>
 <Relation DST="48385" IMemento.internal.id="97797" Prominence="0" RelationType="-2147483648" SRC="72961"/>
 <Relation DST="39681" IMemento.internal.id="145669" Prominence="0" RelationType="-2147483648" SRC="30465"/>
+<Relation DST="290305" IMemento.internal.id="292357" Prominence="0" RelationType="-2147483648" SRC="76801"/>
 <Relation DST="20993" IMemento.internal.id="96261" Prominence="0" RelationType="1073741838" SRC="18433"/>
 <Relation DST="19969" IMemento.internal.id="95493" Message="45569" Prominence="1" RelationType="1073741836" SRC="20993"/>
 <Relation DST="48897" IMemento.internal.id="144133" Prominence="0" RelationType="-2147483648" SRC="39169"/>
@@ -330,6 +332,7 @@
 <Connection ConnectionType="536870913" DST="70146" IMemento.internal.id="232452" MotherDiagram="37379" SRC="77058"/>
 <Connection ConnectionType="536870913" DST="61954" IMemento.internal.id="195588" MotherDiagram="57603" SRC="61698"/>
 <Connection ConnectionType="536870913" DST="78850" IMemento.internal.id="182788" MotherDiagram="37379" SRC="73474"/>
+<Connection ConnectionType="-2147483648" DST="290818" IMemento.internal.id="292612" MotherDiagram="37379" SRC="77058"/>
 <Connection ConnectionType="536870913" DST="63746" IMemento.internal.id="194820" MotherDiagram="57603" SRC="64258"/>
 <Connection ConnectionType="536870913" DST="20482" IMemento.internal.id="97028" MotherDiagram="1283" SRC="18690"/>
 </ConnectionPool>
@@ -512,7 +515,7 @@
 <Look Height="-1" Width="-1" XCoordinate="187" YCoordinate="256"/>
 </EntityCell>
 <EntityCell IMemento.internal.id="290818" MotherDiagram="37379" WrappedEntity="290305">
-<Look Height="-1" Width="-1" XCoordinate="669" YCoordinate="80"/>
+<Look Height="-1" Width="-1" XCoordinate="609" YCoordinate="72"/>
 </EntityCell>
 <EntityCell IMemento.internal.id="21506" MotherDiagram="1283" WrappedEntity="20993">
 <Look Height="-1" Width="-1" XCoordinate="255" YCoordinate="196"/>
@@ -772,6 +775,7 @@
 <Beliefset EntityName="CurrentPosition" IMemento.internal.id="291073">
 <DataField ID="291329" INDEX="0"/>
 <DataField ID="291585" INDEX="1"/>
+<DataField ID="292097" INDEX="2"/>
 </Beliefset>
 <Plan Context="" Description="Report the beliefs of the agent somewhere (e.g., in the GUI)" EntityName="BeliefReporting" Failure="" FailureRecovery="" IMemento.internal.id="46593" Procedure=""/>
 <DataField FieldName="step" FieldType="int" IMemento.internal.id="156417" IsKey="false"/>
@@ -815,7 +819,7 @@
 <Plan Context="" Description="Update the information of one cell in the GUI" EntityName="GUIUpdateCell" Failure="" FailureRecovery="" IMemento.internal.id="61441" Procedure=""/>
 <Message Description="Communicate the status of the agent (position, no of gold pieces, step no, etc)" EntityName="MEInformAgentStatus" IMemento.internal.id="36609" InfoCarried="" IsCovered="true" IsExternal="false" IsOverlapped="true" Package="" Purpose=""/>
 <Data DataType="106241" Description="int id,int stepThe last request-action ID received from the game server" EntityName="bel_currentRequestActionId" IMemento.internal.id="23809" Initialization="" IsExternal="false" IsPersistent="true" Package="" WriteWhen=""/>
-<DataField IMemento.internal.id="291585"/>
+<DataField Description="Vertical position of Agent" FieldName="y" FieldType="int" IMemento.internal.id="291585" IsKey="true"/>
 <Message Description="Signal the need to communicate a message to the game server" EntityName="TellClimaServer" IMemento.internal.id="47105" InfoCarried="" IsCovered="true" IsExternal="false" IsOverlapped="true" Package="rmit.ai.clima.iface" Purpose=""/>
 <Role Description="" EntityName="Talk to Game Server" IMemento.internal.id="22273"/>
 <DataField FieldName="agentNum" FieldType="int" IMemento.internal.id="156161" IsKey="true"/>
@@ -848,6 +852,7 @@
 <Capability Description="" EntityName="GamePlaying" IMemento.internal.id="37121" IsExternal="false" Package="" Process=""/>
 <Message Description="" EntityName="EGUIDebugMessage" IMemento.internal.id="48385" InfoCarried="" IsCovered="true" IsExternal="false" IsOverlapped="true" Package="" Purpose=""/>
 <Scenario Context="" Description="" EntityName="assimilating sensing scenario" IMemento.internal.id="11521" InitiatedBy="System" IsCoupled="false" RelevantGoal="15873" Variation=""/>
+<DataField IMemento.internal.id="292097"/>
 <Beliefset EntityName="Timer" IMemento.internal.id="255233" Package="aos.util.timer.Timer"/>
 <DataField Description="Horisontal Position of Agent" FieldName="x" FieldType="int" IMemento.internal.id="291329" IsKey="true"/>
 <Beliefset EntityName="GUICurrentStep" IMemento.internal.id="155905">

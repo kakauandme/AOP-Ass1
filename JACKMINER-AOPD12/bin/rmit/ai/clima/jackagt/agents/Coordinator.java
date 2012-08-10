@@ -8,12 +8,12 @@ package rmit.ai.clima.jackagt.agents;
 import aos.jack.jak.agent.Agent;
 import rmit.ai.clima.interfaces.DebugInterface;
 import rmit.ai.clima.jackagt.data.SimulationProp;
-import rmit.ai.clima.jackagt.events.MESimEnd;
 import rmit.ai.clima.jackagt.events.MESimStart;
+import rmit.ai.clima.jackagt.events.MESimEnd;
 import rmit.ai.clima.jackagt.events.MEGameEnd;
+import rmit.ai.clima.jackagt.plans.Coord_EndSimulation;
 import rmit.ai.clima.jackagt.plans.Coord_EndGame;
 import rmit.ai.clima.jackagt.plans.Coord_InitSimulation;
-import rmit.ai.clima.jackagt.plans.Coord_EndSimulation;
 import java.lang.Object;
 
 public class Coordinator extends aos.jack.jak.agent.Agent implements rmit.ai.clima.interfaces.DebugInterface {
@@ -85,12 +85,12 @@ public class Coordinator extends aos.jack.jak.agent.Agent implements rmit.ai.cli
     synchronized private void __init_desc()
     {
         addNamedObject("bel_simulationProp_dat","rmit.ai.clima.jackagt.data.SimulationProp",aos.jack.jak.agent.Agent.WRITEABLE);
-        addEvent("rmit.ai.clima.jackagt.events.MESimEnd",aos.jack.jak.agent.Agent.HANDLED_EVENT);
         addEvent("rmit.ai.clima.jackagt.events.MESimStart",aos.jack.jak.agent.Agent.HANDLED_EVENT);
+        addEvent("rmit.ai.clima.jackagt.events.MESimEnd",aos.jack.jak.agent.Agent.HANDLED_EVENT);
         addEvent("rmit.ai.clima.jackagt.events.MEGameEnd",aos.jack.jak.agent.Agent.HANDLED_EVENT);
+        addPlan("rmit.ai.clima.jackagt.plans.Coord_EndSimulation",0);
         addPlan("rmit.ai.clima.jackagt.plans.Coord_EndGame",0);
         addPlan("rmit.ai.clima.jackagt.plans.Coord_InitSimulation",0);
-        addPlan("rmit.ai.clima.jackagt.plans.Coord_EndSimulation",0);
     }
     
     public void init_desc()

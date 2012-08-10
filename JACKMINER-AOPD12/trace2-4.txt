@@ -1,0 +1,51 @@
+Jack AGT: ./lib/jackagt.jar
+Path to jack.jar: 
+Path to climacomms.jar: ./lib/climacomms.jar
+Path to extras.jar: ./lib/gui.jar
+Current path: /Users/KaKaU/Documents/RMIT/2012 S2/AOP/Assignments/AOP-Ass1/JACKMINER-AOPD12
+Java options: -Xmx90m -Dclima.host=localhost -Dclima.port=12300  -Dclima.agent.player1.username=participant1 -Dclima.agent.player1.password=1 -Dclima.agent.player2.username=participant2 -Dclima.agent.player2.password=2 -Dclima.agent.player3.username=participant3 -Dclima.agent.player3.password=3 -Dclima.agent.player4.username=participant4 -Dclima.agent.player4.password=4  -Dclima.agent.player5.username=participant5 -Dclima.agent.player5.password=5 -Dclima.agent.player6.username=participant6 -Dclima.agent.player6.password=6
+[Uses JACK Intelligent Agents Runtime, Copyright 1999-2008, AOS]
+[Uses JACK Intelligent Agents BDI Extension, Copyright 1999-2008, AOS]
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+**** CT Cap ==> Setting ClimaTalking capability debug to: false
+******************* [[player1@%portal]] I have received a SIM-START message....
+******************* [[player6@%portal]] I have received a SIM-START message....
+******************* [[player6@%portal]] I have just started a new simulation!
+******************* [[player6@%portal]] I will move randomly to this dir: down
+******************* [[player6@%portal]] I sent CLIMA action *down* for execution with id 0
+******************* [[player4@%portal]] I have received a SIM-START message....
+******************* [[player4@%portal]] I have just started a new simulation!
+******************* [[player4@%portal]] I will move randomly to this dir: left
+******************* [[player4@%portal]] I sent CLIMA action *left* for execution with id 0
+******************* [[player5@%portal]] I have received a SIM-START message....
+******************* [[player5@%portal]] I have just started a new simulation!
+******************* [[player5@%portal]] I will move randomly to this dir: down
+******************* [[player5@%portal]] I sent CLIMA action *down* for execution with id 0
+******************* [[player3@%portal]] I have received a SIM-START message....
+******************* [[player3@%portal]] I have just started a new simulation!
+******************* [[player3@%portal]] I will move randomly to this dir: down
+******************* [[player3@%portal]] I sent CLIMA action *down* for execution with id 0
+******************* [[player2@%portal]] I have received a SIM-START message....
+******************* [[player2@%portal]] I have just started a new simulation!
+******************* [[player2@%portal]] I will move randomly to this dir: left
+******************* [[player2@%portal]] I sent CLIMA action *left* for execution with id 0
+boss@%portal:: Agent player1@%portal reported the start of a new simulation!
+boss@%portal:: Agent player6@%portal reported the start of a new simulation, but I already know about it...
+boss@%portal:: Agent player4@%portal reported the start of a new simulation, but I already know about it...
+boss@%portal:: Agent player5@%portal reported the start of a new simulation, but I already know about it...
+boss@%portal:: Agent player3@%portal reported the start of a new simulation, but I already know about it...
+boss@%portal:: Agent player2@%portal reported the start of a new simulation, but I already know about it...
+******************* [[player1@%portal]] I have just started a new simulation!
+******************* [[player1@%portal]] I will move randomly to this dir: right
+******************* [[player1@%portal]] I sent CLIMA action *right* for execution with id 0
+================> GUI interface initialized <=================
+=================> Agent player1@%portal registered in the GUI with number 1
+=================> Agent player6@%portal registered in the GUI with number 2
+=================> Agent player4@%portal registered in the GUI with number 3
+=================> Agent player5@%portal registered in the GUI with number 4
+=================> Agent player3@%portal registered in the GUI with number 5
+=================> Agent player2@%portal registered in the GUI with number 6
